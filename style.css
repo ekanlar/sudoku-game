@@ -1,0 +1,77 @@
+#main-frame{
+    
+    background-color: bisque;
+    border: 10px solid beige;
+
+}
+
+#logo-frame{
+    display: flex;
+    justify-content: center;
+}
+
+#logo{
+    margin-top: 10px;
+}
+
+#board-frame{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#board{
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 156px;
+    border: 2px solid rgb(223, 27, 27);
+}
+
+.cell{
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    border: 2px solid red;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+/* Buttons section */
+
+#buttons-frame{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button{
+
+    margin: 5px;
+    margin-top: 15px;
+    font-size: 25px;
+    border-radius: 5px;
+
+}
+
+button:hover{
+
+    
+    background-color: rgb(190 242 229);
+   /*background-color: aquamarine;*/
+
+}
+
+button:active{
+
+    /*background-color: rgb(24, 192, 136);*/
+    background-color: aquamarine;
+
+}
