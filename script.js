@@ -92,6 +92,12 @@ function create_puzzle(elems) {
 function fill_board(elems) {
   for (let i = 0; i < 81; i++) {
     document.querySelector("#cell-" + (i + 1)).value = elems[i];
+    console.log(elems[i]);
+    if (elems[i] === "") {
+      document.querySelector("#cell-" + (i + 1)).disabled = false;
+    } else {
+      document.querySelector("#cell-" + (i + 1)).disabled = true;
+    }
   }
 }
 

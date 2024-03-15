@@ -1,3 +1,7 @@
+*{
+    caret-color: transparent;
+}
+
 #main-frame{
     
     background-color: bisque;
@@ -75,4 +79,17 @@ button:active{
     /*background-color: rgb(24, 192, 136);*/
     background-color: aquamarine;
 
+}
+
+input:disabled{
+    background-color:white;
+    color: black;
+}
+
+input{
+    outline-color: green;
+}
+
+input:focus{
+    background-color: rgb(190 242 229);
 }
