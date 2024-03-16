@@ -2,50 +2,47 @@
     caret-color: transparent;
 }
 
-#main-frame{
-    
+#main-frame{  
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
     background-color: bisque;
     border: 10px solid beige;
-    min-width: 497px;
-
-}
-
-#logo-frame{
-    display: flex;
-    justify-content: center;
 }
 
 #logo{
     margin-top: 10px;
 }
 
-#board-frame{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
 #board{
     display: flex;
     flex-wrap: wrap;
-    width: 480px;
+    aspect-ratio: 1/1;
+    width: 50%;
+    max-width: 480px;
+    background-color:antiquewhite;
 }
 
 .box{
     display: flex;
     flex-wrap: wrap;
-    width: 156px;
-    border: 2px solid rgb(223, 27, 27);
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    border: 2px solid red;
+    width: 33.33%
 }
 
 .cell{
-    width: 40px;
-    height: 40px;
-    margin: 2px;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
     border: 2px solid red;
+    width: 30.3%;
+    background-color: white;
+    margin: 1.5%;
     text-align: center;
-    font-size: 30px;
+    font-size: clamp(1px, 3vw, 30px)
+    
 }
 
 

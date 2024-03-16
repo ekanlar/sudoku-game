@@ -5,3 +5,5 @@
 
 ------------------------------------------------------------
 
+--added media query for mobile device screen sizes
+--made board and box sizes reponsive to window size
