@@ -93,3 +93,27 @@ input{
 input:focus{
     background-color: rgb(190 242 229);
 }
+
+/* Styles for devices with width less than 600px */
+@media (max-width: 600px) {
+  
+    #board{
+     width:300px; 
+    }
+    
+    .cell{
+      font-size: 15px;
+      padding: 0;
+    }
+    
+    button{
+      font-size: 20px;
+      padding: 2px;
+    }
+    
+    .cell:disabled{
+      color: black;
+      font-weight: bold;
+    }
+    
+  }
