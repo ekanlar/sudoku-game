@@ -1,116 +1,106 @@
-*{
-    caret-color: transparent;
+* {
+  caret-color: transparent;
 }
 
-#main-frame{  
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    background-color: bisque;
-    border: 10px solid beige;
+#main-frame {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: bisque;
+  border: 10px solid beige;
 }
 
-#logo{
-    margin-top: 10px;
+#logo {
+  margin-top: 10px;
 }
 
-#board{
-    display: flex;
-    flex-wrap: wrap;
-    aspect-ratio: 1/1;
-    width: 50%;
-    max-width: 480px;
-    background-color:antiquewhite;
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  aspect-ratio: 1/1;
+  width: 50%;
+  max-width: 480px;
+  background-color: antiquewhite;
 }
 
-.box{
-    display: flex;
-    flex-wrap: wrap;
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    border: 2px solid red;
-    width: 33.33%
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  border: 2px solid red;
+  width: 33.33%;
 }
 
-.cell{
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    border: 2px solid red;
-    width: 30.3%;
-    background-color: white;
-    margin: 1.5%;
-    text-align: center;
-    font-size: clamp(1px, 3vw, 30px)
-    
+.cell {
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  border: 2px solid red;
+  width: 30.3%;
+  background-color: white;
+  margin: 1.5%;
+  text-align: center;
+  font-size: clamp(1px, 3vw, 30px);
 }
-
 
 /* Buttons section */
 
-#buttons-frame{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+#buttons-frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-button{
-
-    margin: 5px;
-    margin-top: 15px;
-    font-size: 25px;
-    border-radius: 5px;
-
+button {
+  margin: 5px;
+  margin-top: 15px;
+  font-size: 25px;
+  border-radius: 5px;
 }
 
-button:hover{
-
-    
-    background-color: rgb(190 242 229);
-   /*background-color: aquamarine;*/
-
+button:hover {
+  background-color: rgb(190 242 229);
+  /*background-color: aquamarine;*/
 }
 
-button:active{
-
-    /*background-color: rgb(24, 192, 136);*/
-    background-color: aquamarine;
-
+button:active {
+  /*background-color: rgb(24, 192, 136);*/
+  background-color: aquamarine;
 }
 
-input:disabled{
-    background-color:white;
-    color: black;
+input:disabled {
+  background-color: white;
+  color: black;
 }
 
-input{
-    outline-color: green;
+input {
+  outline-color: green;
 }
 
-input:focus{
-    background-color: rgb(190 242 229);
+input:focus {
+  background-color: rgb(190 242 229);
 }
 
 /* Styles for devices with width less than 600px */
 @media (max-width: 600px) {
-  
-    #board{
-     width:300px; 
-    }
-    
-    .cell{
-      font-size: 15px;
-      padding: 0;
-    }
-    
-    button{
-      font-size: 20px;
-      padding: 2px;
-    }
-    
-    .cell:disabled{
-      color: black;
-      font-weight: bold;
-    }
-    
+  #board {
+    width: 300px;
   }
+
+  .cell {
+    font-size: 20px;
+    padding: 0;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 2px;
+  }
+
+  .cell:disabled {
+    opacity: 1;
+    color: black;
+    font-weight: bold;
+  }
+}
