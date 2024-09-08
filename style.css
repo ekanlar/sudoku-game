@@ -1,5 +1,6 @@
 * {
   caret-color: transparent;
+  cursor: default;
 }
 
 #main-frame {
@@ -21,6 +22,7 @@
   aspect-ratio: 1/1;
   width: 50%;
   max-width: 480px;
+  min-width: 300px;
   background-color: antiquewhite;
 }
 
@@ -55,7 +57,9 @@
 button {
   margin: 5px;
   margin-top: 15px;
-  font-size: 25px;
+  /* font-size: 25px; */
+  /* font-size: calc((100vw * 0.03) - (35.2px * 0.03)); */
+  font-size: clamp(18px, calc((100vw * 0.03) - (35.2px * 0.03)), 28.8px);
   border-radius: 5px;
 }
 
@@ -93,10 +97,10 @@ input:focus {
     padding: 0;
   }
 
-  button {
+  /* button {
     font-size: 20px;
     padding: 2px;
-  }
+  } */
 
   .cell:disabled {
     opacity: 1;

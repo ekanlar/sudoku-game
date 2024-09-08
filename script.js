@@ -356,7 +356,7 @@ for (let i = 0; i < allButtons.length; i++) {
 
   allButtons[i].addEventListener("focusout", () => {
     document.querySelectorAll("*").forEach(function (element) {
-      element.style.cursor = "auto";
+      element.style.cursor = "default";
     });
   });
 
