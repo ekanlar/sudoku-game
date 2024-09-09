@@ -1,3 +1,11 @@
+document.addEventListener(
+  "touchstart",
+  function (event) {
+    event.preventDefault();
+  },
+  { passive: false }
+);
+
 const board = [
   // this is the initial board. All boards are generated based on this board
   3, 9, 1, 2, 8, 6, 5, 7, 4, +4, 8, 7, 3, 5, 9, 1, 2, 6, +6, 5, 2, 7, 1, 4, 8,
