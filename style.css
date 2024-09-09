@@ -61,6 +61,7 @@ button {
   /* font-size: calc((100vw * 0.03) - (35.2px * 0.03)); */
   font-size: clamp(18px, calc((100vw * 0.03) - (35.2px * 0.03)), 28.8px);
   border-radius: 5px;
+  padding: 2px;
 }
 
 button:hover {
