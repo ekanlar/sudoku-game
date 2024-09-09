@@ -65,6 +65,9 @@ button {
   font-size: 27px;
   border-radius: 5px;
   padding: 2px;
+  font-family: "Arial";
+  font-weight: "400";
+  color: "black";
 }
 
 button:hover {
