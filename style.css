@@ -3,10 +3,6 @@
   cursor: default;
 }
 
-html{
-  scroll-behavior: smooth; /* Control page scrolling */
-}
-
 #main-frame {
   display: flex;
   flex-direction: column;
