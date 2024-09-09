@@ -1,10 +1,8 @@
-document.addEventListener(
-  "focus",
-  function (event) {
-    event.preventDefault();
-  },
-  { passive: false }
-);
+document.querySelectorAll("input, .sudoku-board").forEach(function (element) {
+  element.addEventListener("touchstart", function (event) {
+    this.blur(); // Remove focus to prevent auto-scroll
+  });
+});
 
 const board = [
   // this is the initial board. All boards are generated based on this board
