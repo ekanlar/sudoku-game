@@ -95,11 +95,6 @@ input:focus {
 
 /* Styles for devices with width less than 600px */
 @media (max-width: 600px) {
-  html, body {
-    overflow-y: hidden;
-  }
-
-
   #board {
     width: 80vw;
   }
