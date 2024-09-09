@@ -96,7 +96,7 @@ input:focus {
 /* Styles for devices with width less than 600px */
 @media (max-width: 600px) {
   html, body {
-    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
 
