@@ -20,9 +20,10 @@
   display: flex;
   flex-wrap: wrap;
   aspect-ratio: 1/1;
-  width: 50%;
-  max-width: 480px;
-  min-width: 300px;
+  /* width: 50%; */
+  /* max-width: 480px;
+  min-width: 300px; */
+  width: 480px;
   background-color: antiquewhite;
 }
 
@@ -59,7 +60,8 @@ button {
   margin-top: 15px;
   /* font-size: 25px; */
   /* font-size: calc((100vw * 0.03) - (35.2px * 0.03)); */
-  font-size: clamp(18px, calc((100vw * 0.03) - (35.2px * 0.03)), 28.8px);
+  /* font-size: clamp(18px, calc((100vw * 0.03) - (35.2px * 0.03)), 28.8px); */
+  font-size: 27px;
   border-radius: 5px;
   padding: 2px;
 }
@@ -90,7 +92,7 @@ input:focus {
 /* Styles for devices with width less than 600px */
 @media (max-width: 600px) {
   #board {
-    width: 300px;
+    width: 80vw;
   }
 
   .cell {
@@ -98,10 +100,11 @@ input:focus {
     padding: 0;
   }
 
-  /* button {
-    font-size: 20px;
-    padding: 2px;
-  } */
+  button {
+    font-size: 4.5vw;
+    /* font-size: 20px;
+    padding: 2px; */
+  }
 
   .cell:disabled {
     opacity: 1;
