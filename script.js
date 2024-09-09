@@ -1,5 +1,5 @@
 document.addEventListener(
-  "touchstart",
+  "focus",
   function (event) {
     event.preventDefault();
   },
