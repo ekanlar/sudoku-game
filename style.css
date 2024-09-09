@@ -67,7 +67,7 @@ button {
   padding: 2px;
   font-family: "Arial";
   font-weight: "400";
-  color: "black";
+  color: black;
 }
 
 button:hover {
