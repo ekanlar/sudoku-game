@@ -346,7 +346,8 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
-  allButtons[i].addEventListener("click", () => {
+  allButtons[i].addEventListener("click", (e) => {
+    e.preventDefault();
     inputOnClick(allButtons[i]);
   });
 
