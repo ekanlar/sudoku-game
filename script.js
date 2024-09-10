@@ -346,8 +346,12 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
-  allButtons[i].addEventListener("focus", (e) => {
-    e.preventDefault();
+  allButtons[i].addEventListener("touchstart", (e) => {
+    e.target.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+      behavior: "auto",
+    });
   });
 
   allButtons[i].addEventListener("click", () => {
