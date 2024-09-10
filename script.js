@@ -346,13 +346,9 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
-  allButtons[i].addEventListener(
-    "focus",
-    (e) => {
-      e.preventDefault();
-    },
-    { passive: false }
-  );
+  allButtons[i].addEventListener("touchstart", (e) => {
+    document.body.style.overflow = "hidden";
+  });
 
   allButtons[i].addEventListener("click", () => {
     inputOnClick(allButtons[i]);
