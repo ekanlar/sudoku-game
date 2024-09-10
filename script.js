@@ -348,17 +348,15 @@ const allButtons = document.querySelectorAll(".cell");
 for (let i = 0; i < allButtons.length; i++) {
   allButtons[i].addEventListener(
     "focus",
-    () => {
-      inputOnClick(allButtons[i]);
-
-      e.target.scrollIntoView({
-        block: "nearest",
-        inline: "nearest",
-        behavior: "auto",
-      });
+    (e) => {
+      e.preventDefault();
     },
     { passive: false }
   );
+
+  allButtons[i].addEventListener("click", () => {
+    inputOnClick(allButtons[i]);
+  });
 
   allButtons[i].addEventListener("contextmenu", () => {
     inputOnContextmenu(allButtons[i]);
