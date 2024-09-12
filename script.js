@@ -343,6 +343,22 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 
 //////events listeners/////
 
+// Disable auto-scrolling to center on focus
+document.addEventListener(
+  "touchstart",
+  function (event) {
+    // Check if the element is focusable
+    if (
+      event.target !== document.body &&
+      event.target instanceof HTMLElement &&
+      event.target.tabIndex >= 0
+    ) {
+      event.target.blur(); // Remove focus to prevent auto-scroll
+    }
+  },
+  { passive: true }
+);
+
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
