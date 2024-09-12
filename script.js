@@ -343,41 +343,41 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 
 //////events listeners/////
 
-// Disable auto-scrolling to center on focus
+// Disable auto-scrolling to center on focus for input fields
 document.addEventListener(
   "touchstart",
   function (event) {
-    // Disable auto-scroll on touch
+    // If the touched element is an input, remove focus to prevent auto-scroll
     if (
-      event.target !== document.body &&
-      event.target instanceof HTMLElement &&
-      event.target.classList.contains("cell") // Only for Sudoku cells
+      event.target.tagName === "INPUT" &&
+      event.target.classList.contains("cell")
     ) {
-      event.preventDefault(); // Prevent the default touch behavior like scrolling
       event.target.blur(); // Remove focus to prevent auto-scroll
+      event.target.focus(); // Immediately refocus to allow typing without scrolling
     }
   },
-  { passive: false } // Use passive: false to prevent default touch behavior
+  { passive: true } // Ensure normal scrolling remains intact
 );
 
-// Prevent scrolling on specific elements
+// Ensure the body doesn't disable scroll entirely, unless needed
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
   allButtons[i].addEventListener("touchstart", (e) => {
-    e.preventDefault(); // Disable any default behavior like focusing or scrolling
-    document.body.style.overflow = "hidden"; // Disable scrolling while interacting
+    // We won't use preventDefault here to avoid disabling input functionality
+    document.body.style.overflow = "hidden"; // Temporarily disable scroll on interaction
   });
 
   allButtons[i].addEventListener("click", () => {
-    inputOnClick(allButtons[i]);
+    inputOnClick(allButtons[i]); // Keep your input styling functionality
   });
 
   allButtons[i].addEventListener("contextmenu", () => {
-    inputOnContextmenu(allButtons[i]);
+    inputOnContextmenu(allButtons[i]); // Keep your right-click context functionality
   });
 
   allButtons[i].addEventListener("focusout", () => {
+    document.body.style.overflow = "auto"; // Re-enable scrolling once done interacting
     document.querySelectorAll("*").forEach(function (element) {
       element.style.cursor = "default";
     });
@@ -386,7 +386,7 @@ for (let i = 0; i < allButtons.length; i++) {
   allButtons[i].addEventListener("keypress", (event) => {
     inputOnKeyPress(allButtons[i], colorCode, fontSize, fontFamily, fontWeight);
     if (!isNaN(event.key)) {
-      allButtons[i].value = event.key;
+      allButtons[i].value = event.key; // Update the value only if a number is pressed
     }
   });
 }
