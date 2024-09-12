@@ -347,25 +347,27 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 document.addEventListener(
   "touchstart",
   function (event) {
-    // If the touched element is an input, remove focus to prevent auto-scroll
+    // If the touched element is an input, handle it manually
     if (
       event.target.tagName === "INPUT" &&
       event.target.classList.contains("cell")
     ) {
-      event.target.blur(); // Remove focus to prevent auto-scroll
-      event.target.focus(); // Immediately refocus to allow typing without scrolling
+      event.preventDefault(); // Prevent the default iOS scroll-to-center behavior
+      setTimeout(() => {
+        event.target.focus({ preventScroll: true }); // Focus without scrolling
+      }, 10); // Small delay to ensure preventScroll takes effect
     }
   },
-  { passive: true } // Ensure normal scrolling remains intact
+  { passive: false } // We need to prevent default behavior, so passive is false
 );
 
-// Ensure the body doesn't disable scroll entirely, unless needed
+// Ensure the body doesn't disable scroll entirely unless needed
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
   allButtons[i].addEventListener("touchstart", (e) => {
-    // We won't use preventDefault here to avoid disabling input functionality
-    document.body.style.overflow = "hidden"; // Temporarily disable scroll on interaction
+    // Temporarily disable scroll on interaction
+    document.body.style.overflow = "hidden";
   });
 
   allButtons[i].addEventListener("click", () => {
@@ -377,7 +379,8 @@ for (let i = 0; i < allButtons.length; i++) {
   });
 
   allButtons[i].addEventListener("focusout", () => {
-    document.body.style.overflow = "auto"; // Re-enable scrolling once done interacting
+    // Re-enable scrolling once interaction is finished
+    document.body.style.overflow = "auto";
     document.querySelectorAll("*").forEach(function (element) {
       element.style.cursor = "default";
     });
