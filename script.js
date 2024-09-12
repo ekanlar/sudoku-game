@@ -347,23 +347,26 @@ const inputOnKeyPress = (item, color, fontSize, fontFamily, fontWeight) => {
 document.addEventListener(
   "touchstart",
   function (event) {
-    // Check if the element is focusable
+    // Disable auto-scroll on touch
     if (
       event.target !== document.body &&
       event.target instanceof HTMLElement &&
-      event.target.tabIndex >= 0
+      event.target.classList.contains("cell") // Only for Sudoku cells
     ) {
+      event.preventDefault(); // Prevent the default touch behavior like scrolling
       event.target.blur(); // Remove focus to prevent auto-scroll
     }
   },
-  { passive: true }
+  { passive: false } // Use passive: false to prevent default touch behavior
 );
 
+// Prevent scrolling on specific elements
 const allButtons = document.querySelectorAll(".cell");
 
 for (let i = 0; i < allButtons.length; i++) {
   allButtons[i].addEventListener("touchstart", (e) => {
-    document.body.style.overflow = "hidden";
+    e.preventDefault(); // Disable any default behavior like focusing or scrolling
+    document.body.style.overflow = "hidden"; // Disable scrolling while interacting
   });
 
   allButtons[i].addEventListener("click", () => {
@@ -380,7 +383,7 @@ for (let i = 0; i < allButtons.length; i++) {
     });
   });
 
-  allButtons[i].addEventListener("keypress", () => {
+  allButtons[i].addEventListener("keypress", (event) => {
     inputOnKeyPress(allButtons[i], colorCode, fontSize, fontFamily, fontWeight);
     if (!isNaN(event.key)) {
       allButtons[i].value = event.key;
